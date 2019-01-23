@@ -30,14 +30,14 @@ module.exports = {
     },
     module: {
         // 配置preLoaders, 将eslint添加进去
-        loaders: [
+        rules: [
             {
-                test: /\.jsx?$/,
-                loaders: ['eslint-loader'],
-                include: SRC_PATH,
-                enforce: 'pre'
+                // test: /\.jsx?$/,
+                // loaders: ['eslint-loader'],
+                // include: SRC_PATH,
+                // enforce: 'pre'
             }, {
-                test: /\.jsx?$/,
+                test: /\.(js|jsx)$/,
                 loaders: ['babel-loader'],
                 include: SRC_PATH,
                 exclude: path.resolve(ROOT_PATH, 'node_modules')
@@ -54,7 +54,7 @@ module.exports = {
             filename: `test.zip`,
         }),
         new HtmlWebpackPlugin({
-            title: 'react-webpack-demo',
+            title: 'test2',
             filename: 'index.html',
             template: `${__dirname}/src/template.ejs`,
             //template: path.resolve(SRC_PATH, 'templates', 'index.html'),
